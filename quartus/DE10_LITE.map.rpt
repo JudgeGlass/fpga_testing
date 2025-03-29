@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_LITE
-Thu Mar 27 08:48:19 2025
+Sat Mar 29 18:46:36 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 27 08:48:19 2025           ;
+; Analysis & Synthesis Status        ; Successful - Sat Mar 29 18:46:36 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DE10_LITE                                       ;
 ; Top-level Entity Name              ; DE10_LITE                                       ;
@@ -70,6 +70,7 @@ on the Quartus Prime software download page.
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
 ; Top-level entity name                                            ; DE10_LITE          ; DE10_LITE          ;
 ; Family name                                                      ; MAX 10 FPGA        ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation              ; 16                 ;                    ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                      ; Off                ; Off                ;
@@ -153,8 +154,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,44 +165,45 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
-; DE10_LITE.v                      ; yes             ; Auto-Found Verilog HDL File  ; /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; ../comp/led_test.vhd             ; yes             ; User VHDL File  ; /home/hwilcox/Documents/fpga_testing/comp/led_test.vhd     ;         ;
+; DE10_LITE.vhd                    ; yes             ; User VHDL File  ; /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                     ;
-+---------------------------------------------+-------------------+
-; Resource                                    ; Usage             ;
-+---------------------------------------------+-------------------+
-;                                             ;                   ;
-; Total combinational functions               ; 0                 ;
-; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 0                 ;
-;     -- 3 input functions                    ; 0                 ;
-;     -- <=2 input functions                  ; 0                 ;
-;                                             ;                   ;
-; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 0                 ;
-;     -- arithmetic mode                      ; 0                 ;
-;                                             ;                   ;
-; Total registers                             ; 0                 ;
-;     -- Dedicated logic registers            ; 0                 ;
-;     -- I/O registers                        ; 0                 ;
-;                                             ;                   ;
-; I/O pins                                    ; 149               ;
-;                                             ;                   ;
-; Embedded Multiplier 9-bit elements          ; 0                 ;
-;                                             ;                   ;
-; Maximum fan-out node                        ; DRAM_DQ[0]~output ;
-; Maximum fan-out                             ; 1                 ;
-; Total fan-out                               ; 184               ;
-; Average fan-out                             ; 0.55              ;
-+---------------------------------------------+-------------------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+;                                             ;                    ;
+; Total combinational functions               ; 0                  ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- 3 input functions                    ; 0                  ;
+;     -- <=2 input functions                  ; 0                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 0                  ;
+;     -- arithmetic mode                      ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 0                  ;
+;     -- Dedicated logic registers            ; 0                  ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 149                ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; GSENSOR_SDI~output ;
+; Maximum fan-out                             ; 1                  ;
+; Total fan-out                               ; 168                ;
+; Average fan-out                             ; 0.53               ;
++---------------------------------------------+--------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -235,10 +237,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 149                         ;
-; cycloneiii_io_obuf    ; 35                          ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; cycloneiii_io_obuf    ; 19                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 0.00                        ;
 ; Average LUT depth     ; 0.00                        ;
@@ -260,203 +262,205 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Mar 27 08:48:11 2025
+    Info: Processing started: Sat Mar 29 18:46:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_LITE -c DE10_LITE
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file /home/hwilcox/Documents/FPGA/fpga_testing/comp/and_gate.vhdl
-    Info (12022): Found design unit 1: and_gate-behavior File: /home/hwilcox/Documents/FPGA/fpga_testing/comp/and_gate.vhdl Line: 12
-    Info (12023): Found entity 1: and_gate File: /home/hwilcox/Documents/FPGA/fpga_testing/comp/and_gate.vhdl Line: 4
-Warning (12125): Using design file DE10_LITE.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: DE10_LITE File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 6
+Info (20032): Parallel compilation is enabled and will use up to 16 processors
+Info (12021): Found 2 design units, including 1 entities, in source file /home/hwilcox/Documents/fpga_testing/comp/and_gate.vhdl
+    Info (12022): Found design unit 1: and_gate-behavior File: /home/hwilcox/Documents/fpga_testing/comp/and_gate.vhdl Line: 12
+    Info (12023): Found entity 1: and_gate File: /home/hwilcox/Documents/fpga_testing/comp/and_gate.vhdl Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/hwilcox/Documents/fpga_testing/comp/led_test.vhd
+    Info (12022): Found design unit 1: led_test-Behavioral File: /home/hwilcox/Documents/fpga_testing/comp/led_test.vhd Line: 10
+    Info (12023): Found entity 1: led_test File: /home/hwilcox/Documents/fpga_testing/comp/led_test.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file DE10_LITE.vhd
+    Info (12022): Found design unit 1: DE10_LITE-Rtl File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 52
+    Info (12023): Found entity 1: DE10_LITE File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 4
 Info (12127): Elaborating entity "DE10_LITE" for the top level hierarchy
-Warning (10034): Output port "DRAM_ADDR" at DE10_LITE.v(14) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-Warning (10034): Output port "DRAM_BA" at DE10_LITE.v(15) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 15
-Warning (10034): Output port "HEX0" at DE10_LITE.v(27) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-Warning (10034): Output port "HEX1" at DE10_LITE.v(28) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-Warning (10034): Output port "HEX2" at DE10_LITE.v(29) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-Warning (10034): Output port "HEX3" at DE10_LITE.v(30) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-Warning (10034): Output port "HEX4" at DE10_LITE.v(31) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-Warning (10034): Output port "HEX5" at DE10_LITE.v(32) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-Warning (10034): Output port "LEDR" at DE10_LITE.v(38) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-Warning (10034): Output port "VGA_B" at DE10_LITE.v(44) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 44
-Warning (10034): Output port "VGA_G" at DE10_LITE.v(45) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 45
-Warning (10034): Output port "VGA_R" at DE10_LITE.v(47) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 47
-Warning (10034): Output port "DRAM_CAS_N" at DE10_LITE.v(16) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 16
-Warning (10034): Output port "DRAM_CKE" at DE10_LITE.v(17) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 17
-Warning (10034): Output port "DRAM_CLK" at DE10_LITE.v(18) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 18
-Warning (10034): Output port "DRAM_CS_N" at DE10_LITE.v(19) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 19
-Warning (10034): Output port "DRAM_LDQM" at DE10_LITE.v(21) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 21
-Warning (10034): Output port "DRAM_RAS_N" at DE10_LITE.v(22) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 22
-Warning (10034): Output port "DRAM_UDQM" at DE10_LITE.v(23) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 23
-Warning (10034): Output port "DRAM_WE_N" at DE10_LITE.v(24) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 24
-Warning (10034): Output port "VGA_HS" at DE10_LITE.v(46) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 46
-Warning (10034): Output port "VGA_VS" at DE10_LITE.v(48) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 48
-Warning (10034): Output port "GSENSOR_CS_N" at DE10_LITE.v(51) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 51
-Warning (10034): Output port "GSENSOR_SCLK" at DE10_LITE.v(53) has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 53
-Warning (12158): Entity "DE10_LITE" contains only dangling pins
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(10): used implicit default value for signal "DRAM_ADDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(11): used implicit default value for signal "DRAM_BA" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 11
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(12): used implicit default value for signal "DRAM_CAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(13): used implicit default value for signal "DRAM_CKE" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 13
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(14): used implicit default value for signal "DRAM_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 14
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(15): used implicit default value for signal "DRAM_CS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 15
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(17): used implicit default value for signal "DRAM_LDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(18): used implicit default value for signal "DRAM_RAS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 18
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(19): used implicit default value for signal "DRAM_UDQM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 19
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(20): used implicit default value for signal "DRAM_WE_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(22): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(23): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(24): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(25): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(26): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(27): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(35): used implicit default value for signal "VGA_B" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 35
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(36): used implicit default value for signal "VGA_G" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 36
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(37): used implicit default value for signal "VGA_HS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 37
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(38): used implicit default value for signal "VGA_R" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 38
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(39): used implicit default value for signal "VGA_VS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 39
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(41): used implicit default value for signal "GSENSOR_CS_N" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 41
+Warning (10541): VHDL Signal Declaration warning at DE10_LITE.vhd(43): used implicit default value for signal "GSENSOR_SCLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 43
+Info (12128): Elaborating entity "led_test" for hierarchy "led_test:LED_Test_Control" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 62
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[2]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[3]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[4]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[5]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[6]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[7]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[8]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[9]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[10]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[11]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[12]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[13]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[14]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "DRAM_DQ[15]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 20
-    Warning (13040): bidirectional pin "GSENSOR_SDI" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 54
-    Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 55
-    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 58
-    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 60
+    Warning (13040): bidirectional pin "GSENSOR_SDI" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 44
+    Warning (13040): bidirectional pin "GSENSOR_SDO" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 45
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[1]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 47
+    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 48
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 14
-    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 15
-    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 15
-    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 16
-    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 17
-    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 18
-    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 19
-    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 21
-    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 22
-    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 23
-    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 24
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 27
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 28
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 29
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 30
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 31
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 32
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 38
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 44
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 44
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 44
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 44
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 45
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 45
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 45
-    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 45
-    Warning (13410): Pin "VGA_HS" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 46
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 47
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 47
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 47
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 47
-    Warning (13410): Pin "VGA_VS" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 48
-    Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 51
-    Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 53
+    Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[8]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[9]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[10]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[11]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_ADDR[12]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 10
+    Warning (13410): Pin "DRAM_BA[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 11
+    Warning (13410): Pin "DRAM_BA[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 11
+    Warning (13410): Pin "DRAM_CAS_N" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 12
+    Warning (13410): Pin "DRAM_CKE" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 13
+    Warning (13410): Pin "DRAM_CLK" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 14
+    Warning (13410): Pin "DRAM_CS_N" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 15
+    Warning (13410): Pin "DRAM_LDQM" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 17
+    Warning (13410): Pin "DRAM_RAS_N" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 18
+    Warning (13410): Pin "DRAM_UDQM" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 19
+    Warning (13410): Pin "DRAM_WE_N" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 20
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX0[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 22
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX1[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 23
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 24
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 25
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 26
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 27
+    Warning (13410): Pin "LEDR[0]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[1]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[5]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[7]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "LEDR[9]" is stuck at VCC File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 31
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 35
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 35
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 35
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 35
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 36
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 36
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 36
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 36
+    Warning (13410): Pin "VGA_HS" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 37
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 38
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 38
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 38
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 38
+    Warning (13410): Pin "VGA_VS" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 39
+    Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 41
+    Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 43
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 17 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 9
-    Warning (15610): No output dependent on input pin "MAX10_CLK1_50" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 10
-    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 11
-    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 35
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 35
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 41
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 52
-    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: /home/hwilcox/Documents/FPGA/fpga_testing/quartus/DE10_LITE.v Line: 52
+Warning (21074): Design contains 33 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 6
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 7
+    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 8
+    Warning (15610): No output dependent on input pin "DRAM_DQ[0]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[1]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[2]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[3]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[4]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[5]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[6]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[7]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[8]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[9]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[10]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[11]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[12]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[13]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[14]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "DRAM_DQ[15]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 16
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 29
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 29
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 33
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 42
+    Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 42
 Info (21057): Implemented 149 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
+    Info (21058): Implemented 33 input pins
     Info (21059): Implemented 97 output pins
-    Info (21060): Implemented 35 bidirectional pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 179 warnings
-    Info: Peak virtual memory: 410 megabytes
-    Info: Processing ended: Thu Mar 27 08:48:19 2025
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21060): Implemented 19 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 175 warnings
+    Info: Peak virtual memory: 415 megabytes
+    Info: Processing ended: Sat Mar 29 18:46:36 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:12
 
 

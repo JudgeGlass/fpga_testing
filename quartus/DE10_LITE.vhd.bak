@@ -1,0 +1,5 @@
+entity DE10_LITE is
+	port (
+	
+	);
+end DE10_LITE;

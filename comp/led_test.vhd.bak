@@ -1,0 +1,13 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity LEN_ON is
+	port (
+		LED: out STD_LOGIC
+	);
+end LED_ON;
+
+architecture Behavioral of LED_ON is
+begin
+	LED <= '0';
+end Behavioral;
