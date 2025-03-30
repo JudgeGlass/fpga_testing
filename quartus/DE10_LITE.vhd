@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 entity DE10_LITE is
 	port (
@@ -51,18 +52,68 @@ end DE10_LITE;
 
 architecture Rtl of DE10_LITE is
 	signal leds: STD_LOGIC_VECTOR(9 downto 0);
+	signal data: std_logic_vector(23 downto 0) := (others => '0');
+	signal led: std_logic := '0';
 	
 	component led_test
 		port (
 			LEDR_Control: out STD_LOGIC_VECTOR (9 downto 0)
 		);
 	end component;
+	
+	component segment_display
+		port(
+			clk: in std_logic;
+			data: in std_logic_vector (23 downto 0);
+			HEX0: out std_logic_vector (7 downto 0);
+			HEX1: out std_logic_vector (7 downto 0);
+			HEX2: out std_logic_vector (7 downto 0);
+			HEX3: out std_logic_vector (7 downto 0);
+			HEX4: out std_logic_vector (7 downto 0);
+			HEX5: out std_logic_vector (7 downto 0)
+		);
+	end component;
+	
+	component Delay1000ms
+		port(
+			clk: in std_logic;
+			rst: in std_logic;
+			done: out std_logic
+		);
+	end component;
 
 begin
-	LED_Test_Control : led_test
+	
+	
+	Display : segment_display
 		port map (
-			LEDR_Control => leds
+			clk => MAX10_CLK1_50,
+			data => data,
+			HEX0 => HEX0,
+			HEX1 => HEX1,
+			HEX2 => HEX2,
+			HEX3 => HEX3,
+			HEX4 => HEX4,
+			HEX5 => HEX5
 		);
 		
-	LEDR(9 downto 0) <= leds(9 downto 0);
+		
+	-- LEDR(9 downto 0) <= SW(9 downto 0);
+	-- LEDR(7 downto 0) <= segment_1 (7 downto 0);
+	
+	process(MAX10_CLK1_50)
+		variable counter : integer range 0 to 12499999 := 0;
+	begin
+		if rising_edge(MAX10_CLK1_50) then
+			if counter = 12499998 then
+				data <= std_logic_vector(unsigned(data) + 1);
+				led <= not led;
+				LEDR(0) <= led;
+			end if;
+			counter := counter + 1;
+		end if;
+	end process;
+	
+	
+	
 end Rtl;

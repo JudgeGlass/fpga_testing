@@ -1,0 +1,8 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity segment_test is
+	port(
+		HEXR_Control: in std_logic_vector (7 downto 0)
+	);
+end segment_test;
