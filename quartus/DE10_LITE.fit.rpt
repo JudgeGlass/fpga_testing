@@ -1,5 +1,5 @@
 Fitter report for DE10_LITE
-Sat Mar 29 22:30:47 2025
+Sun Mar 30 16:47:19 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -22,25 +22,27 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  14. Dual Purpose and Dedicated Pins
  15. I/O Bank Usage
  16. All Package Pins
- 17. I/O Assignment Warnings
- 18. Fitter Resource Utilization by Entity
- 19. Delay Chain Summary
- 20. Pad To Core Delay Chain Fanout
- 21. Control Signals
- 22. Global & Other Fast Signals
- 23. Routing Usage Summary
- 24. LAB Logic Elements
- 25. LAB-wide Signals
- 26. LAB Signals Sourced
- 27. LAB Signals Sourced Out
- 28. LAB Distinct Inputs
- 29. I/O Rules Summary
- 30. I/O Rules Details
- 31. I/O Rules Matrix
- 32. Fitter Device Options
- 33. Operating Settings and Conditions
- 34. Fitter Messages
- 35. Fitter Suppressed Messages
+ 17. PLL Summary
+ 18. PLL Usage
+ 19. I/O Assignment Warnings
+ 20. Fitter Resource Utilization by Entity
+ 21. Delay Chain Summary
+ 22. Pad To Core Delay Chain Fanout
+ 23. Control Signals
+ 24. Global & Other Fast Signals
+ 25. Routing Usage Summary
+ 26. LAB Logic Elements
+ 27. LAB-wide Signals
+ 28. LAB Signals Sourced
+ 29. LAB Signals Sourced Out
+ 30. LAB Distinct Inputs
+ 31. I/O Rules Summary
+ 32. I/O Rules Details
+ 33. I/O Rules Matrix
+ 34. Fitter Device Options
+ 35. Operating Settings and Conditions
+ 36. Fitter Messages
+ 37. Fitter Suppressed Messages
 
 
 
@@ -67,22 +69,22 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Mar 29 22:30:47 2025           ;
+; Fitter Status                      ; Successful - Sun Mar 30 16:47:19 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; DE10_LITE                                       ;
 ; Top-level Entity Name              ; DE10_LITE                                       ;
 ; Family                             ; MAX 10                                          ;
 ; Device                             ; 10M50DAF484C7G                                  ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 101 / 49,760 ( < 1 % )                          ;
-;     Total combinational functions  ; 101 / 49,760 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 49 / 49,760 ( < 1 % )                           ;
-; Total registers                    ; 49                                              ;
+; Total logic elements               ; 173 / 49,760 ( < 1 % )                          ;
+;     Total combinational functions  ; 160 / 49,760 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 79 / 49,760 ( < 1 % )                           ;
+; Total registers                    ; 79                                              ;
 ; Total pins                         ; 149 / 360 ( 41 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                           ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                                   ;
 ; ADC blocks                         ; 0 / 2 ( 0 % )                                   ;
 +------------------------------------+-------------------------------------------------+
@@ -154,13 +156,13 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.07        ;
+; Average used               ; 1.09        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.4%      ;
-;     Processors 3-16        ;   0.4%      ;
+;     Processor 2            ;   0.6%      ;
+;     Processors 3-16        ;   0.6%      ;
 +----------------------------+-------------+
 
 
@@ -170,8 +172,8 @@ on the Quartus Prime software download page.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 487 ) ; 0.00 % ( 0 / 487 )         ; 0.00 % ( 0 / 487 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 487 ) ; 0.00 % ( 0 / 487 )         ; 0.00 % ( 0 / 487 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 578 ) ; 0.00 % ( 0 / 578 )         ; 0.00 % ( 0 / 578 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 578 ) ; 0.00 % ( 0 / 578 )         ; 0.00 % ( 0 / 578 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -194,8 +196,8 @@ on the Quartus Prime software download page.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 471 )    ; N/A                     ; Source File       ; N/A                 ;       ;
-; hard_block:auto_generated_inst ; 0.00 % ( 0 / 16 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 560 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 18 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
 
@@ -210,26 +212,26 @@ The pin-out file can be found in /home/hwilcox/Documents/fpga_testing/quartus/DE
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 101 / 49,760 ( < 1 % ) ;
-;     -- Combinational with no register       ; 52                     ;
-;     -- Register only                        ; 0                      ;
-;     -- Combinational with a register        ; 49                     ;
+; Total logic elements                        ; 173 / 49,760 ( < 1 % ) ;
+;     -- Combinational with no register       ; 94                     ;
+;     -- Register only                        ; 13                     ;
+;     -- Combinational with a register        ; 66                     ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 51                     ;
-;     -- 3 input functions                    ; 3                      ;
-;     -- <=2 input functions                  ; 47                     ;
-;     -- Register only                        ; 0                      ;
+;     -- 4 input functions                    ; 75                     ;
+;     -- 3 input functions                    ; 7                      ;
+;     -- <=2 input functions                  ; 78                     ;
+;     -- Register only                        ; 13                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 57                     ;
-;     -- arithmetic mode                      ; 44                     ;
+;     -- normal mode                          ; 98                     ;
+;     -- arithmetic mode                      ; 62                     ;
 ;                                             ;                        ;
-; Total registers*                            ; 49 / 51,509 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 49 / 49,760 ( < 1 % )  ;
+; Total registers*                            ; 79 / 51,509 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 79 / 49,760 ( < 1 % )  ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 11 / 3,110 ( < 1 % )   ;
+; Total LABs:  partially or completely used   ; 20 / 3,110 ( < 1 % )   ;
 ; Virtual pins                                ; 0                      ;
 ; I/O pins                                    ; 149 / 360 ( 41 % )     ;
 ;     -- Clock pins                           ; 3 / 8 ( 38 % )         ;
@@ -241,20 +243,20 @@ The pin-out file can be found in /home/hwilcox/Documents/fpga_testing/quartus/DE
 ; Total block memory bits                     ; 0 / 1,677,312 ( 0 % )  ;
 ; Total block memory implementation bits      ; 0 / 1,677,312 ( 0 % )  ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global signals                              ; 1                      ;
-;     -- Global clocks                        ; 1 / 20 ( 5 % )         ;
+; PLLs                                        ; 1 / 4 ( 25 % )         ;
+; Global signals                              ; 2                      ;
+;     -- Global clocks                        ; 2 / 20 ( 10 % )        ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Remote update blocks                        ; 0 / 1 ( 0 % )          ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0.1% / 0.0% / 0.1%     ;
-; Peak interconnect usage (total/H/V)         ; 0.9% / 0.6% / 1.4%     ;
+; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.1%     ;
+; Peak interconnect usage (total/H/V)         ; 0.9% / 0.8% / 1.1%     ;
 ; Maximum fan-out                             ; 49                     ;
 ; Highest non-global fan-out                  ; 25                     ;
-; Total fan-out                               ; 647                    ;
-; Average fan-out                             ; 1.33                   ;
+; Total fan-out                               ; 898                    ;
+; Average fan-out                             ; 1.53                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -267,53 +269,54 @@ The pin-out file can be found in /home/hwilcox/Documents/fpga_testing/quartus/DE
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 101 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 52                    ; 0                              ;
-;     -- Register only                        ; 0                     ; 0                              ;
-;     -- Combinational with a register        ; 49                    ; 0                              ;
+; Total logic elements                        ; 173 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 94                    ; 0                              ;
+;     -- Register only                        ; 13                    ; 0                              ;
+;     -- Combinational with a register        ; 66                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 51                    ; 0                              ;
-;     -- 3 input functions                    ; 3                     ; 0                              ;
-;     -- <=2 input functions                  ; 47                    ; 0                              ;
-;     -- Register only                        ; 0                     ; 0                              ;
+;     -- 4 input functions                    ; 75                    ; 0                              ;
+;     -- 3 input functions                    ; 7                     ; 0                              ;
+;     -- <=2 input functions                  ; 78                    ; 0                              ;
+;     -- Register only                        ; 13                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 57                    ; 0                              ;
-;     -- arithmetic mode                      ; 44                    ; 0                              ;
+;     -- normal mode                          ; 98                    ; 0                              ;
+;     -- arithmetic mode                      ; 62                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 49                    ; 0                              ;
-;     -- Dedicated logic registers            ; 49 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 79                    ; 0                              ;
+;     -- Dedicated logic registers            ; 79 / 49760 ( < 1 % )  ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 11 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 20 / 3110 ( < 1 % )   ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 149                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )       ; 0 / 288 ( 0 % )                ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
-; Clock control block                         ; 1 / 24 ( 4 % )        ; 0 / 24 ( 0 % )                 ;
+; PLL                                         ; 0 / 4 ( 0 % )         ; 1 / 4 ( 25 % )                 ;
+; Clock control block                         ; 1 / 24 ( 4 % )        ; 1 / 24 ( 4 % )                 ;
 ; User Flash Memory                           ; 1 / 1 ( 100 % )       ; 0 / 1 ( 0 % )                  ;
 ; Analog-to-Digital Converter                 ; 2 / 2 ( 100 % )       ; 0 / 2 ( 0 % )                  ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 19                    ; 0                              ;
-;     -- Registered Input Connections         ; 0                     ; 0                              ;
-;     -- Output Connections                   ; 19                    ; 0                              ;
+;     -- Input Connections                    ; 49                    ; 1                              ;
+;     -- Registered Input Connections         ; 30                    ; 0                              ;
+;     -- Output Connections                   ; 20                    ; 30                             ;
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 653                   ; 8                              ;
-;     -- Registered Connections               ; 248                   ; 0                              ;
+;     -- Total Connections                    ; 902                   ; 41                             ;
+;     -- Registered Connections               ; 336                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 38                    ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
+;     -- Top                                  ; 38                    ; 31                             ;
+;     -- hard_block:auto_generated_inst       ; 31                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 33                    ; 0                              ;
-;     -- Output Ports                         ; 97                    ; 0                              ;
+;     -- Input Ports                          ; 33                    ; 1                              ;
+;     -- Output Ports                         ; 97                    ; 1                              ;
 ;     -- Bidir Ports                          ; 19                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -358,7 +361,7 @@ The pin-out file can be found in /home/hwilcox/Documents/fpga_testing/quartus/DE
 ; GSENSOR_INT[2] ; Y13   ; 4        ; 51           ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; KEY[0]         ; B8    ; 7        ; 46           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
 ; KEY[1]         ; A7    ; 7        ; 49           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
-; MAX10_CLK1_50  ; P11   ; 3        ; 34           ; 0            ; 28           ; 49                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
+; MAX10_CLK1_50  ; P11   ; 3        ; 34           ; 0            ; 28           ; 50                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; MAX10_CLK2_50  ; N14   ; 6        ; 78           ; 29           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; SW[0]          ; C10   ; 7        ; 51           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; SW[1]          ; C11   ; 7        ; 51           ; 54           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
@@ -1031,6 +1034,56 @@ The pin-out file can be found in /home/hwilcox/Documents/fpga_testing/quartus/DE
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
++-----------------------------------------------------------------------------------------------------+
+; PLL Summary                                                                                         ;
++-------------------------------+---------------------------------------------------------------------+
+; Name                          ; pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|pll1 ;
++-------------------------------+---------------------------------------------------------------------+
+; SDC pin name                  ; pll_inst|altpll_component|auto_generated|pll1                       ;
+; PLL mode                      ; Normal                                                              ;
+; Compensate clock              ; clock0                                                              ;
+; Compensated input/output pins ; --                                                                  ;
+; Switchover type               ; --                                                                  ;
+; Input frequency 0             ; 50.0 MHz                                                            ;
+; Input frequency 1             ; --                                                                  ;
+; Nominal PFD frequency         ; 7.1 MHz                                                             ;
+; Nominal VCO frequency         ; 528.6 MHz                                                           ;
+; VCO post scale K counter      ; 2                                                                   ;
+; VCO frequency control         ; Auto                                                                ;
+; VCO phase shift step          ; 236 ps                                                              ;
+; VCO multiply                  ; --                                                                  ;
+; VCO divide                    ; --                                                                  ;
+; Freq min lock                 ; 37.8 MHz                                                            ;
+; Freq max lock                 ; 61.51 MHz                                                           ;
+; M VCO Tap                     ; 0                                                                   ;
+; M Initial                     ; 1                                                                   ;
+; M value                       ; 74                                                                  ;
+; N value                       ; 7                                                                   ;
+; Charge pump current           ; setting 1                                                           ;
+; Loop filter resistance        ; setting 16                                                          ;
+; Loop filter capacitance       ; setting 0                                                           ;
+; Bandwidth                     ; 340 kHz to 540 kHz                                                  ;
+; Bandwidth type                ; Medium                                                              ;
+; Real time reconfigurable      ; Off                                                                 ;
+; Scan chain MIF file           ; --                                                                  ;
+; Preserve PLL counter order    ; Off                                                                 ;
+; PLL location                  ; PLL_1                                                               ;
+; Inclk0 signal                 ; MAX10_CLK1_50                                                       ;
+; Inclk1 signal                 ; --                                                                  ;
+; Inclk0 signal type            ; Dedicated Pin                                                       ;
+; Inclk1 signal type            ; --                                                                  ;
++-------------------------------+---------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PLL Usage                                                                                                                                                                                                                                                                                                      ;
++---------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------------+
+; Name                                                                            ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Phase Shift Step ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Cascade Input ; Initial ; VCO Tap ; SDC Pin Name                                         ;
++---------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------------+
+; pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; clock0       ; 74   ; 147 ; 25.17 MHz        ; 0 (0 ps)    ; 2.14 (236 ps)    ; 50/50      ; C0      ; 21            ; 11/10 Odd  ; --            ; 1       ; 0       ; pll_inst|altpll_component|auto_generated|pll1|clk[0] ;
++---------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------------+
+
+
 +------------------------------------------+
 ; I/O Assignment Warnings                  ;
 +-----------------+------------------------+
@@ -1155,20 +1208,24 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------+------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                           ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                    ; Entity Name     ; Library Name ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------------------------------------+-----------------+--------------+
-; |DE10_LITE                                  ; 101 (57)    ; 49 (49)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 149  ; 0            ; 52 (8)       ; 0 (0)             ; 49 (49)          ; 0          ; |DE10_LITE                                                             ; DE10_LITE       ; work         ;
-;    |segment_display:Display|                ; 44 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display                                     ; segment_display ; work         ;
-;       |segment_test:SEGMENT_Test_Control_0| ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_0 ; segment_test    ; work         ;
-;       |segment_test:SEGMENT_Test_Control_1| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_1 ; segment_test    ; work         ;
-;       |segment_test:SEGMENT_Test_Control_2| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_2 ; segment_test    ; work         ;
-;       |segment_test:SEGMENT_Test_Control_3| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_3 ; segment_test    ; work         ;
-;       |segment_test:SEGMENT_Test_Control_4| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_4 ; segment_test    ; work         ;
-;       |segment_test:SEGMENT_Test_Control_5| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_5 ; segment_test    ; work         ;
-+---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+------------------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                  ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                       ; Entity Name     ; Library Name ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
+; |DE10_LITE                                  ; 173 (59)    ; 79 (49)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 149  ; 0            ; 94 (10)      ; 13 (2)            ; 66 (47)          ; 0          ; |DE10_LITE                                                                ; DE10_LITE       ; work         ;
+;    |VGA_Controller:VGA|                     ; 70 (70)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 40 (40)      ; 11 (11)           ; 19 (19)          ; 0          ; |DE10_LITE|VGA_Controller:VGA                                             ; VGA_Controller  ; work         ;
+;    |pll:pll_inst|                           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|pll:pll_inst                                                   ; pll             ; work         ;
+;       |altpll:altpll_component|             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|pll:pll_inst|altpll:altpll_component                           ; altpll          ; work         ;
+;          |pll_altpll:auto_generated|        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated ; pll_altpll      ; work         ;
+;    |segment_display:Display|                ; 44 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (0)       ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display                                        ; segment_display ; work         ;
+;       |segment_test:SEGMENT_Test_Control_0| ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_0    ; segment_test    ; work         ;
+;       |segment_test:SEGMENT_Test_Control_1| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_1    ; segment_test    ; work         ;
+;       |segment_test:SEGMENT_Test_Control_2| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_2    ; segment_test    ; work         ;
+;       |segment_test:SEGMENT_Test_Control_3| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_3    ; segment_test    ; work         ;
+;       |segment_test:SEGMENT_Test_Control_4| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_4    ; segment_test    ; work         ;
+;       |segment_test:SEGMENT_Test_Control_5| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0          ; |DE10_LITE|segment_display:Display|segment_test:SEGMENT_Test_Control_5    ; segment_test    ; work         ;
++---------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1389,89 +1446,92 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                           ;
-+---------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name          ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Equal0~7      ; LCCOMB_X76_Y43_N6 ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; MAX10_CLK1_50 ; PIN_P11           ; 49      ; Clock        ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-+---------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                            ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Equal0~7                                                                        ; LCCOMB_X75_Y45_N30 ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; MAX10_CLK1_50                                                                   ; PIN_P11            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; MAX10_CLK1_50                                                                   ; PIN_P11            ; 49      ; Clock        ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 30      ; Clock        ; yes    ; Global Clock         ; GCLK18           ; --                        ;
++---------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                     ;
-+---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name          ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; MAX10_CLK1_50 ; PIN_P11  ; 49      ; 25                                   ; Global Clock         ; GCLK19           ; --                        ;
-+---------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                                       ;
++---------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                                            ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; MAX10_CLK1_50                                                                   ; PIN_P11  ; 49      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 30      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
++---------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------------+
-; Routing Usage Summary                          ;
-+-----------------------+------------------------+
-; Routing Resource Type ; Usage                  ;
-+-----------------------+------------------------+
-; Block interconnects   ; 94 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 3 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 84 / 106,704 ( < 1 % ) ;
-; Direct links          ; 17 / 148,641 ( < 1 % ) ;
-; Global clocks         ; 1 / 20 ( 5 % )         ;
-; Local interconnects   ; 48 / 49,760 ( < 1 % )  ;
-; NSLEEPs               ; 0 / 500 ( 0 % )        ;
-; R24 interconnects     ; 4 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 52 / 147,764 ( < 1 % ) ;
-+-----------------------+------------------------+
++-------------------------------------------------+
+; Routing Usage Summary                           ;
++-----------------------+-------------------------+
+; Routing Resource Type ; Usage                   ;
++-----------------------+-------------------------+
+; Block interconnects   ; 146 / 148,641 ( < 1 % ) ;
+; C16 interconnects     ; 5 / 5,382 ( < 1 % )     ;
+; C4 interconnects      ; 93 / 106,704 ( < 1 % )  ;
+; Direct links          ; 40 / 148,641 ( < 1 % )  ;
+; Global clocks         ; 2 / 20 ( 10 % )         ;
+; Local interconnects   ; 95 / 49,760 ( < 1 % )   ;
+; NSLEEPs               ; 0 / 500 ( 0 % )         ;
+; R24 interconnects     ; 2 / 5,406 ( < 1 % )     ;
+; R4 interconnects      ; 100 / 147,764 ( < 1 % ) ;
++-----------------------+-------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 9.18) ; Number of LABs  (Total = 11) ;
+; Number of Logic Elements  (Average = 8.65) ; Number of LABs  (Total = 20) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 1                            ;
-; 2                                          ; 0                            ;
-; 3                                          ; 0                            ;
+; 1                                          ; 3                            ;
+; 2                                          ; 1                            ;
+; 3                                          ; 2                            ;
 ; 4                                          ; 0                            ;
-; 5                                          ; 2                            ;
+; 5                                          ; 1                            ;
 ; 6                                          ; 2                            ;
-; 7                                          ; 1                            ;
+; 7                                          ; 2                            ;
 ; 8                                          ; 0                            ;
 ; 9                                          ; 1                            ;
 ; 10                                         ; 0                            ;
 ; 11                                         ; 0                            ;
 ; 12                                         ; 0                            ;
-; 13                                         ; 0                            ;
+; 13                                         ; 1                            ;
 ; 14                                         ; 0                            ;
-; 15                                         ; 2                            ;
-; 16                                         ; 2                            ;
+; 15                                         ; 3                            ;
+; 16                                         ; 4                            ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.45) ; Number of LABs  (Total = 11) ;
+; LAB-wide Signals  (Average = 0.75) ; Number of LABs  (Total = 20) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 4                            ;
-; 1 Clock enable                     ; 1                            ;
+; 1 Clock                            ; 13                           ;
+; 1 Clock enable                     ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 13.64) ; Number of LABs  (Total = 11) ;
+; Number of Signals Sourced  (Average = 12.45) ; Number of LABs  (Total = 20) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 1                            ;
-; 2                                            ; 0                            ;
+; 2                                            ; 3                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
-; 5                                            ; 2                            ;
-; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 4                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
@@ -1483,59 +1543,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 0                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 1                            ;
 ; 22                                           ; 0                            ;
 ; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 2                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 1                            ;
+; 28                                           ; 2                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 6.91) ; Number of LABs  (Total = 11) ;
+; Number of Signals Sourced Out  (Average = 6.25) ; Number of LABs  (Total = 20) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
+; 1                                               ; 5                            ;
 ; 2                                               ; 0                            ;
-; 3                                               ; 2                            ;
+; 3                                               ; 3                            ;
 ; 4                                               ; 0                            ;
-; 5                                               ; 2                            ;
+; 5                                               ; 1                            ;
 ; 6                                               ; 2                            ;
-; 7                                               ; 2                            ;
+; 7                                               ; 3                            ;
 ; 8                                               ; 0                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 0                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 1                            ;
+; 12                                              ; 1                            ;
 ; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
+; 15                                              ; 1                            ;
 ; 16                                              ; 1                            ;
-; 17                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 3.45) ; Number of LABs  (Total = 11) ;
+; Number of Distinct Inputs  (Average = 4.75) ; Number of LABs  (Total = 20) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 1                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 5                            ;
-; 5                                           ; 1                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 7                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 4                            ;
+; 5                                           ; 2                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 1                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 2                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 0                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 1                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1795,6 +1859,8 @@ Info (20032): Parallel compilation is enabled and will use up to 16 processors
 Info (119006): Selected device 10M50DAF484C7G for design "DE10_LITE"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Info (15535): Implemented PLL "pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|pll1" as MAX 10 PLL type File: /home/hwilcox/Documents/fpga_testing/quartus/db/pll_altpll.v Line: 44
+    Info (15099): Implementing clock multiplication of 74, clock division of 147, and phase shift of 0 degrees (0 ps) for pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] port File: /home/hwilcox/Documents/fpga_testing/quartus/db/pll_altpll.v Line: 44
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1826,12 +1892,16 @@ Info (12825): nCSO dual-purpose pin not reserved
 Info (12825): DCLK dual-purpose pin not reserved
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'DE10_LITE.SDC'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained generated clocks found in the design
 Info (332144): No user constrained base clocks found in the design
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 8
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
+Info (176353): Automatically promoted node pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: /home/hwilcox/Documents/fpga_testing/quartus/db/pll_altpll.v Line: 78
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1841,14 +1911,15 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y44 to location X78_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
+    Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.08 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1929,10 +2000,10 @@ Warning (169064): Following 19 pins have no output enable or a GND or VCC output
     Info (169065): Pin ARDUINO_RESET_N has a permanently disabled output enable File: /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.vhd Line: 49
 Info (144001): Generated suppressed messages file /home/hwilcox/Documents/fpga_testing/quartus/DE10_LITE.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2043 megabytes
-    Info: Processing ended: Sat Mar 29 22:30:48 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 2042 megabytes
+    Info: Processing ended: Sun Mar 30 16:47:19 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +----------------------------+

@@ -366,4 +366,6 @@ set_global_assignment -name SDC_FILE DE10_LITE.SDC
 set_global_assignment -name VHDL_FILE ../comp/led_test.vhd
 set_global_assignment -name VHDL_FILE DE10_LITE.vhd
 set_global_assignment -name VHDL_FILE ../comp/segment_display.vhd
+set_global_assignment -name VHDL_FILE ../comp/VGA_Controller.vhd
+set_global_assignment -name QIP_FILE pll.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

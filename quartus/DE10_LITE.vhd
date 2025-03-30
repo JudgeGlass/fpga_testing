@@ -51,6 +51,7 @@ entity DE10_LITE is
 end DE10_LITE;
 
 architecture Rtl of DE10_LITE is
+	signal clk: std_logic;
 	signal leds: STD_LOGIC_VECTOR(9 downto 0);
 	signal data: std_logic_vector(23 downto 0) := (others => '0');
 	signal led: std_logic := '0';
@@ -74,17 +75,32 @@ architecture Rtl of DE10_LITE is
 		);
 	end component;
 	
-	component Delay1000ms
-		port(
+	component VGA_Controller
+		port (
 			clk: in std_logic;
-			rst: in std_logic;
-			done: out std_logic
+			VGA_B: out STD_LOGIC_VECTOR (3 downto 0);
+			VGA_G: out STD_LOGIC_VECTOR (3 downto 0);
+			VGA_HS: out STD_LOGIC;
+			VGA_R: out STD_LOGIC_VECTOR (3 downto 0);
+			VGA_VS: out STD_LOGIC
+		);
+	end component;
+	
+	component pll
+		port (
+			inclk0: in std_logic;
+			c0: out std_logic
 		);
 	end component;
 
 begin
-	
-	
+	-- c0 is a 25.175MHz clock by phase-lock loop
+	pll_inst : pll
+		port map(
+			inclk0 => MAX10_CLK1_50,
+			c0 => clk
+		);
+
 	Display : segment_display
 		port map (
 			clk => MAX10_CLK1_50,
@@ -97,9 +113,15 @@ begin
 			HEX5 => HEX5
 		);
 		
-		
-	-- LEDR(9 downto 0) <= SW(9 downto 0);
-	-- LEDR(7 downto 0) <= segment_1 (7 downto 0);
+	VGA : VGA_Controller
+		port map (
+			clk => clk,
+			VGA_B => VGA_B,
+			VGA_G => VGA_G,
+			VGA_HS => VGA_HS,
+			VGA_R => VGA_R,
+			VGA_VS => VGA_VS
+		);
 	
 	process(MAX10_CLK1_50)
 		variable counter : integer range 0 to 12499999 := 0;

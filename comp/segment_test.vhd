@@ -17,12 +17,10 @@ entity segment_test is
 		HEXR_Control: out std_logic_vector (7 downto 0)
 	);
 end segment_test;
-
 architecture behavior of segment_test is
 begin
 	process(clk) is
 	begin
-		
 		if B(3 downto 0) = "0001" then
 			HEXR_Control <= not "00000110";
 		elsif B(3 downto 0) = "0010" then
@@ -56,8 +54,5 @@ begin
 		elsif B(3 downto 0) = "0000" then
 			HEXR_Control <= not "00111111";
 		end if;
-		
-		
 	end process;
-	
 end behavior;

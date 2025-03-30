@@ -13,9 +13,7 @@ entity segment_display is
 		HEX5: out std_logic_vector (7 downto 0)
 	);
 end segment_display;
-
 architecture behavior of segment_display is
-
 	component segment_test
 		port(
 			clk: in std_logic;
@@ -23,7 +21,6 @@ architecture behavior of segment_display is
 			HEXR_Control: out std_logic_vector (7 downto 0)
 		);
 	end component;
-
 begin
 	SEGMENT_Test_Control_0 : segment_test
 		port map (
